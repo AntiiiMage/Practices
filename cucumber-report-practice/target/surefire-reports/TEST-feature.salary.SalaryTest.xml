@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="feature.salary.SalaryTest" time="0.004" tests="4" errors="0" skipped="0" failures="0">
+<testsuite name="feature.salary.SalaryTest" time="0" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib"/>
@@ -26,7 +26,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/OtisMac/Documents/Eclipseworkspace/StudySpace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf6331152610869795847.tmp"/>
+    <property name="classworlds.conf" value="/Users/OtisMac/Documents/Eclipseworkspace/StudySpace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4138894429010271895.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/OtisMac/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,8 +62,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="Given the salary management system is initialized with the following data" classname="Scenario: Modify an employee&apos;s salary" time="0.001"/>
+  <testcase name="Given the salary management system is initialized with the following data" classname="Scenario: Modify an employee&apos;s salary" time="0"/>
   <testcase name="When the boss increases the salary for the employee with id &apos;3&apos; by 5%" classname="Scenario: Modify an employee&apos;s salary" time="0"/>
-  <testcase name="Then the payroll for the employee with id &apos;3&apos; should display a salary of 57750" classname="Scenario: Modify an employee&apos;s salary" time="0.001"/>
-  <testcase name="Scenario: Modify an employee&apos;s salary" classname="Scenario: Modify an employee&apos;s salary" time="0.002"/>
+  <testcase name="Then the payroll for the employee with id &apos;3&apos; should display a salary of 57750" classname="Scenario: Modify an employee&apos;s salary" time="0"/>
+  <testcase name="Scenario: Modify an employee&apos;s salary" classname="Scenario: Modify an employee&apos;s salary" time="0"/>
 </testsuite>
