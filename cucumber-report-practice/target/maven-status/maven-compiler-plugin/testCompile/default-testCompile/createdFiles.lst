@@ -1,0 +1,6 @@
+feature/book/BookSearchTest.class
+feature/salary/SalarySteps.class
+feature/salary/SalaryTest.class
+se/thinkcode/itake/RunCukesTest.class
+se/thinkcode/itake/StepDefinitions.class
+feature/book/BookSearchSteps.class
