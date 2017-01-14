@@ -19,26 +19,26 @@ A short demonstration how to set-up cucumber and report in a mavenized Java envi
 ##Configure Plugin
 ###Surefire plugin:
 ```xml
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-surefire-plugin</artifactId>
-		<version>2.18.1</version>
-		<executions>
-			<execution>
-				<id>defult-test</id>
-				<phase>test</phase>
-				<goals>
-					<goal>test</goal>
-				</goals>
-				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
-					<includes>
-						<include>**feature**</include>
-					</includes>
-				</configuration>
-			</execution>
-		</executions>
-	</plugin>
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-surefire-plugin</artifactId>
+	<version>2.18.1</version>
+	<executions>
+		<execution>
+			<id>defult-test</id>
+			<phase>test</phase>
+			<goals>
+				<goal>test</goal>
+			</goals>
+			<configuration>
+				<testFailureIgnore>true</testFailureIgnore>
+				<includes>
+					<include>**feature**</include>
+				</includes>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>
 ```	
 ###Cucumber Reporting plugin
 ```xml
