@@ -3,22 +3,21 @@
 A short demonstration how to set-up cucumber and report in a mavenized Java environment.
 
 ##Add dependencies:
-	```xml
 		<dependency>
 			<groupId>com.googlecode.totallylazy</groupId>
 			<artifactId>totallylazy</artifactId>
 			<version>1.86</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>3.4.0</version>
 		</dependency>
-	```xml
 
 ##Configure Plugin
 ###Surefire plugin:
-	```xml
+
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-surefire-plugin</artifactId>
@@ -39,9 +38,9 @@ A short demonstration how to set-up cucumber and report in a mavenized Java envi
 				</execution>
 			</executions>
 		</plugin>
-	```		
+	
 ###Cucumber Reporting plugin
-	```xml
+
 	<plugin>
 		<groupId>net.masterthought</groupId>
 		<artifactId>maven-cucumber-reporting</artifactId>
@@ -63,7 +62,7 @@ A short demonstration how to set-up cucumber and report in a mavenized Java envi
 			</execution>
 		</executions>
 	</plugin>
-	```
+
 
 ## Test class configuration
 ```java
