@@ -72,3 +72,7 @@ A short demonstration how to set-up cucumber and report in a mavenized Java envi
 public class BookSearchTest {
 }
 ```
+## Test with maven build
+```shell
+mvn clean test -Pfunction-test
+```
