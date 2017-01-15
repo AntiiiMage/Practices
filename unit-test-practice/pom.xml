@@ -45,7 +45,7 @@
 									<includes>
 										<include>**/antiiimage/**</include>
 									</includes>
-									<testFailureIgnore>true</testFailureIgnore>
+									<testFailureIgnore>false</testFailureIgnore>
 									<properties>
 										<property>
 											<name>listener</name>
@@ -56,7 +56,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- Generate HTML -->
+					<!-- Generate HTML, can be executed throught maven -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-report-plugin</artifactId>

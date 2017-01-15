@@ -31,7 +31,7 @@
 	<includes>
 		<include>**/antiiimage/**</include>
 	</includes>
-	<testFailureIgnore>true</testFailureIgnore>
+	<testFailureIgnore>false</testFailureIgnore>
 	<properties>
 		<property>
 			<name>listener</name>
@@ -46,4 +46,19 @@ To get coverage per tests information, you will need to activate the profile whe
 
 ```shell
 mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent -Punit-test test
+```
+
+## Jenkins Pipeline configuration
+```groovy
+try {
+        // Any maven phase that that triggers the test phase can be used here.
+        sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent -Punit-test test'
+    } catch(err) {
+//Commend because the xml already generated
+//step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+    
+    //generate html and css/js report
+    sh 'mvn surefire-report:report-only -DreportsDirectory=/surefire-reports/unite-test site -DgenerateReports=false'
+        throw err
+    }
 ```
