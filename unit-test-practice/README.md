@@ -1,8 +1,13 @@
 # Java Unit Report, jUnit + Jacoco Maven Snippets
 
-A short demonstration how to set-up junit and report in a mavenized Java environment.
+* A short demonstration how to set-up junit and surefire ***xml html*** report in a mavenized Java environment.
 
-How to get code coverage by Jacoco
+* How to get code coverage by Jacoco
+
+***Defects (To Do)***
+
+* Maven build will succeed with test failures
+* To generate all reports and code coverage then failes the build
 
 ##Add dependencies:
 ```xml
@@ -40,5 +45,5 @@ How to get code coverage by Jacoco
 To get coverage per tests information, you will need to activate the profile when running the instrumented tests:
 
 ```shell
-mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Punit-test
+mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent -Punit-test test
 ```
