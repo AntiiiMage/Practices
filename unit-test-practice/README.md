@@ -1,78 +1,44 @@
-# Cucumber, Java, Report, jUnit + Maven Snippets
+# Java Unit Report, jUnit + Jacoco Maven Snippets
 
-A short demonstration how to set-up cucumber and report in a mavenized Java environment.
+A short demonstration how to set-up junit and report in a mavenized Java environment.
+
+How to get code coverage by Jacoco
 
 ##Add dependencies:
 ```xml
-<dependency>
-	<groupId>com.googlecode.totallylazy</groupId>
-	<artifactId>totallylazy</artifactId>
-	<version>1.86</version>
-</dependency>
-	
-<dependency>
-	<groupId>net.masterthought</groupId>
-	<artifactId>cucumber-reporting</artifactId>
-	<version>3.4.0</version>
-</dependency>
+<dependencies>
+	<dependency>
+		<groupId>org.sonarsource.java</groupId>
+		<artifactId>sonar-jacoco-listeners</artifactId>
+		<version>3.8</version>
+		<scope>test</scope>
+	</dependency>
+</dependencies>
 ```
 ##Configure Plugin
-###Surefire plugin:
+###Configurations of Surefire plugin:
 ```xml
-<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-surefire-plugin</artifactId>
-	<version>2.18.1</version>
-	<executions>
-		<execution>
-			<id>defult-test</id>
-			<phase>test</phase>
-			<goals>
-				<goal>test</goal>
-			</goals>
-			<configuration>
-				<testFailureIgnore>true</testFailureIgnore>
-				<includes>
-					<include>**feature**</include>
-				</includes>
-			</configuration>
-		</execution>
-	</executions>
-</plugin>
+...
+<configuration>
+	<skip>false</skip>
+	<failIfNoTests>true</failIfNoTests>
+	<reportsDirectory>${project.build.directory}/surefire-reports/antiiimageTest</reportsDirectory>
+	<includes>
+		<include>**/antiiimage/**</include>
+	</includes>
+	<testFailureIgnore>true</testFailureIgnore>
+	<properties>
+		<property>
+			<name>listener</name>
+			<value>org.sonar.java.jacoco.JUnitListener</value>
+		</property>
+	</properties>
+</configuration>
+..
 ```	
-###Cucumber Reporting plugin
-```xml
-<plugin>
-	<groupId>net.masterthought</groupId>
-	<artifactId>maven-cucumber-reporting</artifactId>
-	<version>3.4.0</version>
-	<executions>
-		<execution>
-			<id>execution</id>
-			<phase>test</phase>
-			<goals>
-				<goal>generate</goal>
-			</goals>
-			<configuration>
-				<projectName>cucumber-jvm-example</projectName>
-				<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
-				<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-				<enableFlashCharts>false</enableFlashCharts>
-				<skippedFails>true</skippedFails>
-			</configuration>
-		</execution>
-	</executions>
-</plugin>
-```
-
-## Test class configuration
-```java
-@RunWith(Cucumber.class)
-@CucumberOptions(format = { "pretty", "json:target/cucumber.json" })
-public class BookSearchTest {
-}
-```
 ## Test with maven build
+To get coverage per tests information, you will need to activate the profile when running the instrumented tests:
+
 ```shell
-mvn clean test -Pfunction-test
+mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Punit-test
 ```
