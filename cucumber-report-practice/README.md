@@ -1,6 +1,10 @@
 # Cucumber, Java, Report, jUnit + Maven Snippets
 
-A short demonstration how to set-up cucumber and report in a mavenized Java environment.
+A short demonstration how to set-up cucumber and ***xml html***  report in a mavenized Java environment.
+
+Defects:
+
+* failure control is not fully completed
 
 ##Add dependencies:
 ```xml
