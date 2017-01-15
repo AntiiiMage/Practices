@@ -4,10 +4,10 @@
 
 * How to get code coverage by Jacoco
 
-***Defects (To Do)***
+***Notes***
 
-* Maven build will succeed with test failures
-* To generate all reports and code coverage then failes the build
+* Maven build will not succeed with test failures
+* Failes the build when test failes, then generate all reports and CSS/JS through Jenkins job
 
 ##Add dependencies:
 ```xml
