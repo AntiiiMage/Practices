@@ -10,7 +10,7 @@ mvn help:describe -Dmojo=describe -DgroupId=org.apache.maven.plugins -DartifactI
 
 ```
 
-##Surefire report plugin
+##Surefire report plugin, generate HTML only
 ```sh
 mvn surefire-report:report-only -DreportsDirectories = 
 ```
