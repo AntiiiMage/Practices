@@ -31,3 +31,7 @@ def matcher = readFile(pomRep) =~ '<version>(.+)</version>'   artifactVersion 
 ```groovy
 @NonCPSdef mapToList(depmap) {    def dlist = []    for (def entry2 in depmap) {        dlist.add(new java.util.AbstractMap.SimpleImmutableEntry(entry2.key, entry2.value))    }    dlist}
 ```
+##Iterate (loop) the map
+```groovy
+def printMap(map){ for(def e in mapToList(map)){  echo "key = ${e.key}, value = ${e.value}" }}
+```
