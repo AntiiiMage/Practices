@@ -206,3 +206,21 @@ node {
   }
 }
 ```
+
+##Wrap your inputs in a timeout
+```groovy
+timeout(time:5, unit:'DAYS') {
+    input message:'Approve deployment?', submitter: 'it-ops'
+}
+```
+
+##Handling Errors
+```groovy
+try {
+
+} catch (e) {
+	throw e
+} finally {
+	
+}
+```
